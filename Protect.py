@@ -25,9 +25,7 @@ async def on_message(message):
     await client.process_commands(message)
 
 @client.command(pass_context=True)
-async def protect(context, message, ctx):
-    author = ctx.message.author
-    
+async def protect(context):
     client.say('We have sent you the code to enter the protected account the you have entered.')
     possible_responses = [
         '378837',
@@ -37,7 +35,7 @@ async def protect(context, message, ctx):
         '086732',
         '362909',
     ]
-    await client.send_message(author, random.choice(possible_responses))
+    await client.send_message(random.choice(possible_responses))
 
 @client.command(pass_context=True)
 async def help(ctx):
