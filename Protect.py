@@ -25,8 +25,8 @@ async def on_message(message):
     await client.process_commands(message)
 
 @client.command(pass_context=True)
-async def protect(context, ctx):
-    author = ctx.message.author
+async def protect(context):
+    author = message.author
     
     client.say('We have sent you the code to enter the protected account the you have entered.')
     possible_responses = [
