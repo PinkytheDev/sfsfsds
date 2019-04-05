@@ -25,19 +25,9 @@ async def on_message(message):
     await client.process_commands(message)
 
 @client.command(pass_context=True)
-async def protect(context, message):
-    User = message.user
-    
-    client.say('We have sent you the code to enter the protected account the you have entered.')
-    possible_responses = [
-        '378837',
-        '975374',
-        '636359',
-        '540284',
-        '086732',
-        '362909',
-    ]
-    await client.send_message(User, random.choice(possible_responses))
+async def report(ctx, userName: discord.user):
+    client.report(userName)
+    client.say('Reported ' + userName)
 
 @client.command(pass_context=True)
 async def help(ctx):
