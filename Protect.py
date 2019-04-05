@@ -25,8 +25,8 @@ async def on_message(message):
     await client.process_commands(message)
 
 @client.command(pass_context=True)
-async def report(ctx, userName: discord.User):
-    client.send_message(userName, 'You have been reported')
+async def report(ctx, target: discord.User):
+    client.send_message(target, 'You have been reported')
     client.say('Reported')
 
 @client.command(pass_context=True)
