@@ -26,7 +26,7 @@ async def on_message(message):
 
 @client.command(pass_context=True)
 async def protect(context, ctx):
-    channel = ctx.message.channel
+    channel = ctx.channel
     client.say('Protected Account: ' + context)
     possible_responses = [
         '378837',
