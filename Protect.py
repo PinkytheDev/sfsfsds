@@ -9,12 +9,12 @@ import os
 from discord import Game
 from discord.ext import commands
 
-client = commands.Bot(command_prefix='.p')
+client = commands.Bot(command_prefix='.')
 client.remove_command('help')
 
 @client.event
 async def on_ready():
-    await client.change_presence(game=Game(name='Protecting Accounts | .p'))
+    await client.change_presence(game=Game(name='Protecting Accounts | .'))
     print('Connected on ' + client.user.name)
 
 @client.event
@@ -25,7 +25,7 @@ async def on_message(message):
     await client.process_commands(message)
 
 @client.command(pass_context=True)
-async def report(ctx, target: discord.User):
+async def report(ctx, context, target: discord.User):
     client.send_message(target, 'You have been reported')
     client.say('Reported')
 
