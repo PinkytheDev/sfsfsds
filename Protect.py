@@ -12,7 +12,7 @@ from discord.ext import commands
 
 client = commands.Bot(command_prefix='.m')
 client.remove_command('help')
-os.chdir(r'/storage/emulated/0/funcbot.py')
+os.chdir(r'/github.com/PinkytheDev/sfsfsds/Protect.py')
 
 players = {}
 queues = {}
